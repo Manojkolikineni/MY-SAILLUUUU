@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Sahiillluuuu 💙</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div id="stars"></div>
+
+    <div class="cloud cloud1">☁️</div>
+    <div class="cloud cloud2">☁️</div>
+    <div class="cloud cloud3">☁️</div>
+
+    <div class="butterfly butterfly1">🦋</div>
+    <div class="butterfly butterfly2">🦋</div>
+
+
+    <!-- PHASE 1: WELCOME -->
+
+    <section id="welcomeScreen" class="screen">
+
+        <div class="welcome-card">
+
+            <div class="welcome-heart">💙</div>
+
+            <h1>Hey My Saiillluuuu!</h1>
+
+            <p>
+                I have created something special
+                just for you.
+            </p>
+
+            <p class="welcome-small">
+                A little journey filled with love,
+                memories and surprises.
+            </p>
+
+            <button id="startButton" class="magic-button">
+                Begin Our Journey ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 2: COUNTDOWN -->
+
+    <section id="countdownSection" class="screen hidden">
+
+        <div class="countdown-card">
+
+            <h1>Something Magical Is Coming! 💙</h1>
+
+            <p class="countdown-subtitle">
+                Waiting for the most special day...
+            </p>
+
+            <div class="birthday-name">
+                Happy Birthday, Saiillluuuu! 🎂
+            </div>
+
+            <div class="countdown-grid">
+
+                <div class="countdown-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+
+                <div class="countdown-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+
+                <div class="countdown-box">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+
+                <div class="countdown-box">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+
+            </div>
+
+            <p class="countdown-message">
+                Every second brings us closer
+                to celebrating you. 💕
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PASSWORD SCREEN -->
+
+    <section id="passwordSection" class="screen hidden">
+
+        <div class="password-card">
+
+            <div class="password-heart">🔐</div>
+
+            <h1>A Little Secret!</h1>
+
+            <p>
+                Only my special person can enter.
+            </p>
+
+            <form id="passwordForm">
+
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter your secret password"
+                    required
+                >
+
+                <button type="submit" class="magic-button">
+                    Unlock My Surprise 💙
+                </button>
+
+            </form>
+
+            <p id="passwordError" class="error-message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 3: LOVE LETTER -->
+
+    <section id="letterScreen" class="screen hidden">
+
+        <div class="letter-container">
+
+            <h1>A Letter For You 💌</h1>
+
+            <p class="letter-subtitle">
+                Something from my heart...
+            </p>
+
+            <div id="envelopeStage">
+
+                <div class="envelope" id="envelope">
+
+                    <div class="envelope-top"></div>
+
+                    <div class="envelope-body">💙</div>
+
+                </div>
+
+                <button id="openLetterButton" class="magic-button">
+                    Open My Letter
+                </button>
+
+            </div>
+
+            <div id="letterReadingArea" class="hidden">
+
+                <div class="letter-paper">
+                    <p id="typedLetter"></p>
+                </div>
+
+                <button id="continueButton" class="magic-button hidden">
+                    Continue Our Journey ✨
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 4: PHOTO GALLERY -->
+
+    <section id="memoriesScreen" class="screen hidden">
+
+        <div class="section-heading">
+
+            <h1>Our Beautiful Memories 📸</h1>
+
+            <p>
+                Every picture holds a little piece
+                of happiness.
+            </p>
+
+        </div>
+
+        <div class="photo-gallery">
+
+            <img src="assets/images/sahitya1.jpeg"
+                alt="Memory 1" class="gallery-photo">
+
+            <img src="assets/images/sahitya2.jpeg"
+                alt="Memory 2" class="gallery-photo">
+
+            <img src="assets/images/sahitya3.jpeg"
+                alt="Memory 3" class="gallery-photo">
+
+            <img src="assets/images/sahitya4.jpeg"
+                alt="Memory 4" class="gallery-photo">
+
+            <img src="assets/images/sahitya5.jpeg"
+                alt="Memory 5" class="gallery-photo">
+
+            <img src="assets/images/sahitya6.jpeg"
+                alt="Memory 6" class="gallery-photo">
+
+        </div>
+
+        <button id="galleryContinueButton" class="magic-button">
+            Next Surprise 💕
+        </button>
+
+    </section>
+
+
+    <!-- PHOTO VIEWER -->
+
+    <div id="photoViewer" class="photo-viewer hidden">
+
+        <button id="closeViewerButton" class="close-viewer">
+            ×
+        </button>
+
+        <button id="previousPhotoButton" class="viewer-arrow">
+            ❮
+        </button>
+
+        <img id="viewerImage" src="" alt="Selected memory">
+
+        <button id="nextPhotoButton" class="viewer-arrow">
+            ❯
+        </button>
+
+        <p id="viewerCaption"></p>
+
+    </div>
+
+
+    <!-- PHASE 5: 30 REASONS -->
+
+    <section id="reasonsScreen" class="screen hidden">
+
+        <div class="section-heading">
+
+            <h1>30 Reasons Why I Love You 💙</h1>
+
+            <p>
+                Each card holds one reason.
+                Tap to discover it!
+            </p>
+
+        </div>
+
+        <div class="reason-progress">
+
+            <p id="reasonCounter">
+                0 / 30 Reasons Discovered
+            </p>
+
+            <div class="progress-track">
+                <div id="reasonProgressBar"></div>
+            </div>
+
+        </div>
+
+        <div id="reasonsGrid" class="reasons-grid"></div>
+
+        <div id="reasonsComplete" class="hidden">
+
+            <h2>You Are My Everything! 💙</h2>
+
+            <p>
+                And these are just 30 reasons.
+                I could write millions more.
+            </p>
+
+            <button id="flowerGardenButton" class="magic-button">
+                Enter Our Magical Garden 🌸
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 6: FLOWER GARDEN -->
+
+    <section id="flowerGardenScreen" class="screen hidden">
+
+        <div class="section-heading">
+
+            <h1>Our Magical Garden 🌷</h1>
+
+            <p>
+                Touch every flower and discover
+                a little message from my heart.
+            </p>
+
+        </div>
+
+        <div id="flowerGarden" class="flower-garden">
+
+            <button class="garden-flower" data-index="0">🌷</button>
+            <button class="garden-flower" data-index="1">🌸</button>
+            <button class="garden-flower" data-index="2">🌼</button>
+            <button class="garden-flower" data-index="3">🪻</button>
+            <button class="garden-flower" data-index="4">🌺</button>
+            <button class="garden-flower" data-index="5">🌻</button>
+
+        </div>
+
+        <div id="flowerMessage" class="flower-message hidden"></div>
+
+        <div id="gardenComplete" class="hidden">
+
+            <h2>You Made My Garden Beautiful! 💙</h2>
+
+            <p>
+                Just like you make my life beautiful.
+            </p>
+
+            <button id="timelineButton" class="magic-button">
+                Explore Our Love Story 💕
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 7: RELATIONSHIP TIMELINE -->
+
+    <section id="timelineScreen" class="screen hidden">
+
+        <div class="timeline-heading">
+
+            <h1>Our Beautiful Journey 💙</h1>
+
+            <p>
+                Every date has a memory.
+                Every memory has you.
+                And every moment with you is special. ❤️
+            </p>
+
+            <div class="timeline-heart">💙</div>
+
+        </div>
+
+        <div class="timeline-container">
+
+            <div id="relationshipTimeline"
+                class="relationship-timeline">
+            </div>
+
+        </div>
+
+        <div class="timeline-ending">
+
+            <h2>And Our Story Continues... 💕</h2>
+
+            <p>
+                These are just a few chapters of our story.
+                I want to create thousands more with you.
+            </p>
+
+            <button id="secretMessageButton" class="magic-button">
+                Open My Heart 💌
+            </button>
+
+            <p id="timelineSecretMessage" class="timeline-secret hidden">
+
+                If I could write a thousand stories,
+                I would still choose to make every one
+                of them with you.
+
+                I love you, Nannaa! 💙
+
+            </p>
+
+            <button id="giftBoxButton" class="magic-button hidden">
+                One Last Surprise For You 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 8: MAGICAL GIFT -->
+
+    <section id="giftScreen" class="screen hidden">
+
+        <div class="gift-heading">
+
+            <h1>A Little Something For You! 💙</h1>
+
+            <p>
+                I have been waiting to give you this surprise.
+            </p>
+
+            <p>
+                Close your eyes, make a wish and open your gift! ✨
+            </p>
+
+        </div>
+
+        <div class="gift-container">
+
+            <div id="giftBox" class="gift-box">
+
+                <div class="gift-lid">
+                    <div class="gift-ribbon"></div>
+                </div>
+
+                <div class="gift-body">
+
+                    <div class="gift-ribbon"></div>
+
+                    <div class="gift-bow">🎀</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p id="giftInstruction">
+            Tap the gift box to open your surprise! 🎁
+        </p>
+
+        <div id="giftMessage" class="gift-message hidden">
+
+            <div class="gift-message-heart">💙</div>
+
+            <h1>Happy Birthday, My Saiillluuuu!</h1>
+
+            <h2>My Favourite Person ❤️</h2>
+
+            <p>
+
+                My dear Saiillluuuu,
+
+                Today is all about you.
+
+                I wish I could collect all the happiness
+                in this world and give it to you.
+
+                You are the most beautiful parts
+                of my life.
+
+                Thank you for every smile, every laugh,
+                every little moment and every beautiful
+                memory we have created together.
+
+                I don't need a perfect world.
+                I just want a world where I get to
+                make you smile.
+
+                May all your dreams come true.
+                May you always stay happy.
+
+                And may we keep creating countless
+                beautiful memories together.
+
+            </p>
+
+            <div class="gift-signature">
+
+                Forever Yours,
+
+                <span>Nanna 💙</span>
+
+            </div>
+
+            <button id="replayGiftButton" class="magic-button">
+                See My Surprise Again 💕
+
+            </button>
+
+            <button id="voiceMessageButton" class="magic-button">
+                Hear My Voice, My Love 🎙️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 9: PERSONAL VOICE MESSAGE -->
+
+    <section id="voiceScreen" class="screen hidden">
+
+        <div class="voice-card">
+
+            <div class="voice-icon">
+                🎙️
+            </div>
+
+            <h1>A Message From My Heart</h1>
+
+            <p class="voice-subtitle">
+                I wanted you to hear something special...
+            </p>
+
+            <div class="voice-animation">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <h2>For My Sahiillluuuu 💙</h2>
+
+            <p class="voice-description">
+
+                These are not just words.
+                These are my feelings, straight from my heart.
+
+                Listen whenever you miss me. ❤️
+
+            </p>
+
+            <!-- UPDATED AUDIO FILE NAME -->
+
+            <audio id="birthdayVoice" controls preload="metadata">
+
+                <source
+                    src="assets/audio/voice-message.mp3"
+                    type="audio/mpeg"
+                >
+
+                Your browser does not support audio playback.
+
+            </audio>
+
+            <div class="voice-footer">
+
+                <p>
+                    No matter how many times you listen,
+                    remember that someone is always
+                    cheering for your happiness. 💕
+                </p>
+
+                <h2>Forever Yours, Manoj 💙</h2>
+
+            </div>
+
+            <button id="replayVoiceButton" class="magic-button">
+                Listen Again 💙
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 10: BIRTHDAY CELEBRATION -->
+
+    <section id="celebrationScreen" class="screen hidden">
+
+        <div class="celebration-card">
+
+            <h1 class="celebration-title">
+                Happy Birthday, My Sahiillluuuu! 💙
+            </h1>
+
+            <p class="celebration-subtitle">
+                Today, the whole universe is celebrating you! ✨
+            </p>
+
+            <div class="birthday-cake" id="birthdayCake">
+
+                <div class="candles">
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                </div>
+
+                <div class="cake-top"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-bottom"></div>
+
+            </div>
+
+            <h2 id="cakeInstruction">
+                Make a wish, my love! 🌸
+            </h2>
+
+            <p class="blow-instruction">
+                Tap the button below to blow out your candles.
+            </p>
+
+            <button id="blowCandlesButton" class="magic-button">
+                Blow Out the Candles 🕯️
+            </button>
+
+            <div id="birthdayFinalMessage" class="hidden">
+
+                <h1>🎉 HAPPY BIRTHDAY! 🎉</h1>
+
+                <p>
+                    My dearest Sahitya,
+                    <br><br>
+
+                    You deserve all the happiness, love and beautiful
+                    things this world has to offer.
+                    <br><br>
+
+                    Thank you for being my favourite person,
+                    my happiness and my sweetest memory.
+                    <br><br>
+
+                    I hope this new year of your life brings you
+                    endless smiles and everything your heart wishes for.
+                    <br><br>
+
+                    I love you so much, my Sahiillluuuu! ❤️
+                </p>
+
+                <h2>Forever Yours, Manoj 💙</h2>
+
+                <button id="celebrationReplayButton" class="magic-button">
+                    Celebrate Again! 🎊
+                </button>
+
+            </div>
+
+            <div id="confettiContainer"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHASE 11: FINAL PROMISE -->
+
+    <section id="finalScreen" class="screen hidden">
+
+        <div class="final-card">
+
+            <div class="final-heart">💙</div>
+
+            <h1>One Last Thing, My Love...</h1>
+
+            <p class="final-intro">
+                Before this little journey ends, I want you to know something.
+            </p>
+
+            <div class="promise-box">
+
+                <h2>My Promise to You ❤️</h2>
+
+                <p>
+                    Sahitya, I cannot promise that every day will be perfect.
+                    I cannot promise that we will never have difficult moments.
+
+                    But I can promise that I will keep trying,
+                    keep understanding you, keep supporting your dreams
+                    and keep finding little ways to make you smile.
+
+                    I want to celebrate your happiness,
+                    stand beside you during your difficult days
+                    and create thousands of beautiful memories with you.
+
+                    I don't know exactly what our future holds,
+                    but I know that I want to make beautiful memories
+                    with you along the way.
+
+                    Thank you for being you.
+                    Thank you for being my favourite person.
+                </p>
+
+                <h2 class="forever-text">
+                    Always Your Manoj 💙
+                </h2>
+
+            </div>
+
+            <div class="final-message">
+
+                <h2>My Favourite Person. My Favourite Story. 💕</h2>
+
+                <p>Happy Birthday once again, my Sahiillluuuu!</p>
+
+            </div>
+
+            <button id="replayWebsiteButton" class="magic-button">
+                Relive Our Little World 💙
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

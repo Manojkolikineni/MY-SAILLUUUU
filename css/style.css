@@ -1,0 +1,1736 @@
+/* =====================================
+   SAILLUUU - DREAMY BLUE THEME
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #87CEEB,
+        #BDE0FE,
+        #FFFFFF,
+        #CDB4DB
+    );
+
+    color: #315C8C;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================
+   BACKGROUND DECORATIONS
+===================================== */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    color: white;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+.cloud {
+    position: fixed;
+    font-size: 65px;
+    opacity: 0.6;
+    z-index: 0;
+    animation: floatCloud 15s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+
+.cloud1 {
+    top: 10%;
+    left: 5%;
+}
+
+.cloud2 {
+    top: 30%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+.cloud3 {
+    bottom: 10%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes floatCloud {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(45px);
+    }
+}
+
+.butterfly {
+    position: fixed;
+    font-size: 30px;
+    z-index: 1;
+    animation: butterflyFloat 8s infinite alternate;
+    pointer-events: none;
+}
+
+.butterfly1 {
+    top: 25%;
+    left: 10%;
+}
+
+.butterfly2 {
+    bottom: 25%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes butterflyFloat {
+    from {
+        transform: translate(0, 0) rotate(-10deg);
+    }
+
+    to {
+        transform: translate(40px, -50px) rotate(15deg);
+    }
+}
+
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    color: white;
+    animation: sparkleMove 3s linear forwards;
+    z-index: 5;
+}
+
+@keyframes sparkleMove {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100px) scale(0);
+    }
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.magic-button {
+    border: none;
+    padding: 15px 32px;
+    border-radius: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #6AAED6,
+        #9B8BC7
+    );
+
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+
+    box-shadow: 0 5px 20px rgba(49,92,140,0.2);
+    transition: 0.3s;
+}
+
+.magic-button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 30px rgba(49,92,140,0.3);
+}
+
+
+/* =====================================
+   PHASE 1 - WELCOME
+===================================== */
+
+.welcome-card {
+    text-align: center;
+    max-width: 600px;
+
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(15px);
+
+    padding: 55px 35px;
+    border-radius: 30px;
+
+    box-shadow: 0 15px 45px rgba(49,92,140,0.15);
+}
+
+.welcome-card h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+    color: #315C8C;
+    margin: 20px 0;
+}
+
+.welcome-card p {
+    line-height: 1.8;
+}
+
+.welcome-small {
+    margin-top: 15px;
+    color: #5687B7;
+}
+
+.welcome-heart {
+    font-size: 75px;
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =====================================
+   PHASE 2 - COUNTDOWN
+===================================== */
+
+.countdown-card {
+    width: 100%;
+    max-width: 700px;
+
+    padding: 45px 25px;
+    text-align: center;
+
+    border-radius: 30px;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 15px 40px rgba(49,92,140,0.15);
+}
+
+.countdown-card h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.countdown-subtitle {
+    margin-bottom: 25px;
+}
+
+.birthday-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: #5687B7;
+    margin-bottom: 30px;
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 550px;
+    margin: auto;
+}
+
+.countdown-box {
+    padding: 20px 10px;
+    background: #E3F2FD;
+    border-radius: 18px;
+
+    box-shadow: 0 5px 15px rgba(49,92,140,0.1);
+}
+
+.countdown-box span {
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+    color: #315C8C;
+}
+
+.countdown-box small {
+    font-size: 13px;
+}
+
+.countdown-message {
+    margin-top: 30px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   PASSWORD
+===================================== */
+
+.password-card {
+    width: 100%;
+    max-width: 450px;
+
+    text-align: center;
+    padding: 40px 25px;
+
+    background: rgba(255,255,255,0.8);
+    border-radius: 25px;
+
+    box-shadow: 0 10px 35px rgba(49,92,140,0.15);
+}
+
+.password-card h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.password-heart {
+    font-size: 55px;
+}
+
+.password-card input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+
+    border: 2px solid #BDE0FE;
+    border-radius: 15px;
+    outline: none;
+    font-size: 15px;
+}
+
+.error-message {
+    color: #d9534f;
+    margin-top: 15px;
+}
+
+
+/* =====================================
+   PHASE 3 - LOVE LETTER
+===================================== */
+
+.letter-container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.letter-container h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+}
+
+.letter-subtitle {
+    margin: 15px 0 35px;
+}
+
+.envelope {
+    width: 220px;
+    height: 145px;
+    margin: 20px auto;
+
+    background: #9CCFEA;
+    border-radius: 8px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+
+    box-shadow: 0 10px 25px rgba(49,92,140,0.2);
+}
+
+.envelope-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 110px solid transparent;
+    border-right: 110px solid transparent;
+    border-top: 80px solid #6AAED6;
+}
+
+.envelope-body {
+    position: relative;
+    z-index: 1;
+}
+
+.letter-paper {
+    background: #fffdf7;
+    padding: 35px;
+    border-radius: 10px;
+    min-height: 250px;
+
+    text-align: left;
+    color: #456789;
+
+    box-shadow: 0 10px 30px rgba(49,92,140,0.2);
+
+    line-height: 2;
+    white-space: pre-line;
+}
+
+
+/* =====================================
+   PHASE 4 - PHOTO GALLERY
+===================================== */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    line-height: 1.8;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    max-width: 1000px;
+    width: 100%;
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    box-shadow: 0 8px 20px rgba(49,92,140,0.15);
+}
+
+.gallery-photo:hover {
+    transform: scale(1.04);
+}
+
+
+/* PHOTO VIEWER */
+
+.photo-viewer {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(20,40,70,0.95);
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 30px;
+}
+
+.photo-viewer img {
+    max-width: 75%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.photo-viewer p {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    background: none;
+    color: white;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.viewer-arrow {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   PHASE 5 - REASONS
+===================================== */
+
+.reason-progress {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.progress-track {
+    height: 12px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+#reasonProgressBar {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #6AAED6,
+        #9B8BC7
+    );
+
+    transition: width 0.4s;
+}
+
+.reasons-grid {
+    width: 100%;
+    max-width: 1000px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.reason-card {
+    height: 150px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.reason-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.reason-card.flipped .reason-card-inner {
+    transform: rotateY(180deg);
+}
+
+.reason-front,
+.reason-back {
+    position: absolute;
+    inset: 0;
+
+    backface-visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+    padding: 12px;
+    text-align: center;
+}
+
+.reason-front {
+    background: rgba(255,255,255,0.8);
+    font-size: 35px;
+
+    box-shadow: 0 5px 15px rgba(49,92,140,0.1);
+}
+
+.reason-back {
+    background: #D9EEFF;
+    color: #315C8C;
+
+    transform: rotateY(180deg);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#reasonsComplete {
+    text-align: center;
+    margin-top: 35px;
+}
+
+#reasonsComplete h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+}
+
+
+/* =====================================
+   PHASE 6 - FLOWER GARDEN
+===================================== */
+
+.flower-garden {
+    max-width: 700px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 30px;
+}
+
+.garden-flower {
+    border: none;
+
+    background: rgba(255,255,255,0.7);
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    font-size: 65px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    box-shadow: 0 8px 20px rgba(49,92,140,0.12);
+}
+
+.garden-flower:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.garden-flower.bloomed {
+    transform: scale(1.2);
+    background: #E3F2FD;
+    box-shadow: 0 0 25px white;
+}
+
+.flower-message {
+    max-width: 550px;
+
+    background: rgba(255,255,255,0.8);
+
+    padding: 25px;
+    border-radius: 20px;
+
+    text-align: center;
+    font-size: 19px;
+
+    margin: 20px;
+}
+
+#gardenComplete {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#gardenComplete h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 38px;
+}
+
+
+/* =====================================
+   PHASE 7 - RELATIONSHIP TIMELINE
+===================================== */
+
+#timelineScreen {
+    min-height: 100vh;
+    padding: 60px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #87ceeb,
+        #bde0fe,
+        #ffffff,
+        #cdb4db
+    );
+
+    overflow: hidden;
+}
+
+.timeline-heading {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.timeline-heading h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+    color: #315c8c;
+    margin-bottom: 15px;
+}
+
+.timeline-heading p {
+    color: #315c8c;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.timeline-heart {
+    font-size: 45px;
+    margin-top: 20px;
+    animation: heartBeat 1.5s infinite;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+.relationship-timeline {
+    position: relative;
+}
+
+.relationship-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff,
+        #8ecae6,
+        #cdb4db
+    );
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+}
+
+.timeline-item {
+    width: 50%;
+    position: relative;
+    padding: 25px 40px;
+
+    box-sizing: border-box;
+
+    animation: timelineAppear 1s ease forwards;
+}
+
+@keyframes timelineAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    background: #ffffff;
+    border: 5px solid #6aaed6;
+
+    border-radius: 50%;
+    top: 40px;
+
+    z-index: 2;
+
+    box-shadow: 0 0 15px #ffffff;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -12px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -12px;
+}
+
+.timeline-card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+
+    border-radius: 22px;
+    padding: 22px;
+
+    box-shadow: 0 8px 30px rgba(49,92,140,0.15);
+
+    transition: 0.4s;
+
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.timeline-card:hover {
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow: 0 15px 35px rgba(49,92,140,0.25);
+}
+
+.timeline-date {
+    color: #5687b7;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.timeline-card h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 29px;
+    color: #315c8c;
+    margin-bottom: 12px;
+}
+
+.timeline-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 12px 0;
+}
+
+.timeline-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #456789;
+}
+
+.timeline-ago {
+    display: inline-block;
+
+    background: #e3f2fd;
+    color: #315c8c;
+
+    padding: 8px 15px;
+    border-radius: 20px;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.timeline-ending {
+    text-align: center;
+    margin: 80px auto 30px;
+    max-width: 650px;
+}
+
+.timeline-ending h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #315c8c;
+    font-size: 42px;
+}
+
+.timeline-ending p {
+    color: #456789;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.timeline-secret {
+    background: rgba(255,255,255,0.8);
+
+    padding: 25px;
+    border-radius: 20px;
+
+    margin-top: 25px !important;
+
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    color: #315c8c;
+
+    animation: timelineAppear 1s ease;
+}
+
+
+/* =====================================
+   PHASE 8 - MAGICAL GIFT
+===================================== */
+
+.gift-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.gift-heading h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    color: #315c8c;
+    margin-bottom: 15px;
+}
+
+.gift-heading p {
+    color: #456789;
+    line-height: 1.8;
+}
+
+.gift-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 270px;
+    perspective: 1000px;
+}
+
+.gift-box {
+    position: relative;
+    width: 190px;
+    height: 170px;
+
+    cursor: pointer;
+
+    animation: giftFloat 2s infinite ease-in-out;
+    transition: transform 0.5s;
+}
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.gift-box:hover {
+    transform: scale(1.08);
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+
+    width: 190px;
+    height: 125px;
+
+    background: linear-gradient(
+        135deg,
+        #6aaed6,
+        #9b8bc7
+    );
+
+    border-radius: 10px;
+
+    box-shadow: 0 15px 30px rgba(49,92,140,0.25);
+}
+
+.gift-ribbon {
+    position: absolute;
+    left: 75px;
+
+    width: 40px;
+    height: 100%;
+
+    background: #ffffff;
+    opacity: 0.9;
+}
+
+.gift-bow {
+    position: absolute;
+    top: -45px;
+    left: 65px;
+    font-size: 55px;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 0;
+    left: -10px;
+
+    width: 210px;
+    height: 50px;
+
+    background: #5687b7;
+
+    border-radius: 10px;
+
+    z-index: 2;
+
+    transform-origin: left center;
+
+    transition: transform 1s ease;
+
+    box-shadow: 0 5px 15px rgba(49,92,140,0.2);
+}
+
+.gift-lid .gift-ribbon {
+    left: 85px;
+}
+
+.gift-box.opened {
+    animation: none;
+}
+
+.gift-box.opened .gift-lid {
+    transform: translate(-65px, -100px) rotate(-30deg);
+}
+
+.gift-box.opened .gift-body {
+    animation: giftGlow 1s infinite alternate;
+}
+
+@keyframes giftGlow {
+    from {
+        box-shadow: 0 0 15px #ffffff;
+    }
+
+    to {
+        box-shadow: 0 0 40px #ffffff;
+    }
+}
+
+#giftInstruction {
+    text-align: center;
+    margin-top: 15px;
+    color: #315c8c;
+    font-weight: 500;
+}
+
+.gift-message {
+    max-width: 650px;
+    width: 100%;
+
+    margin: 45px auto 20px;
+    padding: 35px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 40px rgba(49,92,140,0.2);
+
+    animation: giftReveal 1s ease;
+}
+
+@keyframes giftReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.gift-message-heart {
+    font-size: 65px;
+    animation: heartBeat 1.5s infinite;
+}
+
+.gift-message h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 43px;
+    color: #315c8c;
+    margin: 15px 0;
+}
+
+.gift-message h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: #5687b7;
+    margin-bottom: 20px;
+}
+
+.gift-message p {
+    white-space: pre-line;
+    color: #456789;
+    line-height: 2;
+    font-size: 15px;
+}
+
+.gift-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    margin-top: 25px;
+    color: #5687b7;
+}
+
+.gift-signature span {
+    display: block;
+    font-size: 35px;
+    color: #315c8c;
+    margin-top: 10px;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+
+    z-index: 100;
+    pointer-events: none;
+
+    animation: floatHeart 4s linear forwards;
+}
+
+@keyframes floatHeart {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 700px) {
+
+    .welcome-card h1 {
+        font-size: 40px;
+    }
+
+    .countdown-card h1 {
+        font-size: 35px;
+    }
+
+    .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .countdown-box span {
+        font-size: 30px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-photo {
+        height: 190px;
+    }
+
+    .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flower-garden {
+        gap: 15px;
+    }
+
+    .garden-flower {
+        width: 85px;
+        height: 85px;
+        font-size: 45px;
+    }
+
+    .timeline-heading h1 {
+        font-size: 38px;
+    }
+
+    .relationship-timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 5px;
+        text-align: left !important;
+    }
+
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 3px;
+        right: auto;
+    }
+
+    .timeline-card img {
+        height: 200px;
+    }
+
+    .timeline-card h2 {
+        font-size: 25px;
+    }
+
+    .timeline-ending h2 {
+        font-size: 34px;
+    }
+
+    .photo-viewer {
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .photo-viewer img {
+        max-width: 75%;
+    }
+
+    .gift-heading h1 {
+        font-size: 36px;
+    }
+
+    .gift-message {
+        padding: 25px 18px;
+    }
+
+    .gift-message h1 {
+        font-size: 34px;
+    }
+
+    .gift-message p {
+        font-size: 14px;
+    }
+
+}
+/* =====================================
+   PHASE 9 - PERSONAL VOICE MESSAGE
+===================================== */
+
+.voice-card {
+
+    width: 100%;
+    max-width: 650px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(49,92,140,0.2);
+
+}
+
+.voice-icon {
+
+    font-size: 75px;
+
+    margin-bottom: 20px;
+
+    animation: microphoneFloat 2s infinite ease-in-out;
+
+}
+
+@keyframes microphoneFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+.voice-card h1 {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 45px;
+
+    color: #315c8c;
+
+    margin-bottom: 15px;
+
+}
+
+.voice-subtitle {
+
+    color: #5687b7;
+
+    margin-bottom: 25px;
+
+}
+
+.voice-animation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    height: 65px;
+
+    margin: 25px 0;
+
+}
+
+.voice-animation span {
+
+    display: block;
+
+    width: 7px;
+
+    height: 20px;
+
+    background: linear-gradient(
+        #6aaed6,
+        #9b8bc7
+    );
+
+    border-radius: 10px;
+
+    animation: soundWave 1s infinite ease-in-out;
+
+}
+
+.voice-animation span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.voice-animation span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.voice-animation span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.voice-animation span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.voice-animation span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.voice-animation span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+@keyframes soundWave {
+
+    0%, 100% {
+        height: 15px;
+    }
+
+    50% {
+        height: 55px;
+    }
+
+}
+
+.voice-card h2 {
+
+    font-family: 'Dancing Script', cursive;
+
+    color: #315c8c;
+
+    font-size: 32px;
+
+}
+
+.voice-description {
+
+    color: #456789;
+
+    line-height: 1.9;
+
+    margin: 20px 0;
+
+}
+
+#birthdayVoice {
+
+    width: 100%;
+
+    margin: 25px 0;
+
+}
+
+.voice-footer {
+
+    padding: 20px;
+
+    background: #e3f2fd;
+
+    border-radius: 20px;
+
+    line-height: 1.8;
+
+    color: #456789;
+
+}
+
+.voice-footer h2 {
+
+    margin-top: 15px;
+
+    font-size: 28px;
+
+}
+
+@media (max-width: 700px) {
+
+    .voice-card {
+
+        padding: 30px 18px;
+
+    }
+
+    .voice-card h1 {
+
+        font-size: 35px;
+
+    }
+
+}
+/* PHASE 10 - BIRTHDAY CELEBRATION */
+
+.celebration-card {
+    width: 90%;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 10px 40px rgba(49, 92, 140, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.celebration-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    color: #315C8C;
+}
+
+.celebration-subtitle {
+    color: #527ca5;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.birthday-cake {
+    position: relative;
+    width: 240px;
+    height: 210px;
+    margin: 50px auto 25px;
+}
+
+.cake-bottom,
+.cake-middle,
+.cake-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px 12px 20px 20px;
+    background: linear-gradient(135deg, #87CEEB, #BDE0FE);
+    box-shadow: 0 5px 12px rgba(49, 92, 140, 0.2);
+}
+
+.cake-bottom {
+    bottom: 0;
+    width: 230px;
+    height: 65px;
+}
+
+.cake-middle {
+    bottom: 60px;
+    width: 190px;
+    height: 55px;
+    background: linear-gradient(135deg, #CDB4DB, #E8D5F5);
+}
+
+.cake-top {
+    bottom: 110px;
+    width: 150px;
+    height: 45px;
+    background: linear-gradient(135deg, #FFFFFF, #BDE0FE);
+}
+
+.candles {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 25px;
+    z-index: 5;
+}
+
+.candle {
+    height: 45px;
+    width: 12px;
+    background: linear-gradient(to right, #87CEEB, #FFFFFF);
+    border-radius: 5px;
+    position: relative;
+}
+
+.flame {
+    position: absolute;
+    width: 15px;
+    height: 22px;
+    background: radial-gradient(circle, #fff7a8, #ffae42, #ff6b35);
+    border-radius: 50% 50% 50% 50%;
+    top: -23px;
+    left: -2px;
+    animation: candleFlame 0.5s infinite alternate;
+}
+
+@keyframes candleFlame {
+    from {
+        transform: scale(1) rotate(-5deg);
+    }
+    to {
+        transform: scale(1.15) rotate(5deg);
+    }
+}
+
+.candles.blown-out .flame {
+    display: none;
+}
+
+#birthdayFinalMessage {
+    padding: 25px 10px;
+    animation: messageAppear 1s ease;
+}
+
+#birthdayFinalMessage h1 {
+    color: #315C8C;
+    font-family: 'Dancing Script', cursive;
+    font-size: 38px;
+}
+
+#birthdayFinalMessage p {
+    line-height: 1.9;
+    color: #527ca5;
+    font-size: 16px;
+}
+
+#birthdayFinalMessage h2 {
+    color: #315C8C;
+    font-family: 'Dancing Script', cursive;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CONFETTI */
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 15px;
+    animation: confettiFall 3s linear forwards;
+    z-index: 10;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(700px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .celebration-title {
+        font-size: 32px;
+    }
+
+    .celebration-card {
+        padding: 25px 12px;
+    }
+
+    #birthdayFinalMessage h1 {
+        font-size: 30px;
+    }
+}
+/* PHASE 11 - FINAL PROMISE */
+
+.final-card {
+    width: 90%;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.78);
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(49, 92, 140, 0.2);
+    animation: messageAppear 1s ease;
+}
+
+.final-heart {
+    font-size: 65px;
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.final-card h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #315C8C;
+    font-size: 42px;
+}
+
+.final-intro {
+    color: #527ca5;
+    margin: 20px 0 30px;
+}
+
+.promise-box {
+    padding: 25px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #e3f2fd, #f5eaff);
+    border: 1px solid rgba(135, 206, 235, 0.5);
+}
+
+.promise-box h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #315C8C;
+    font-size: 30px;
+}
+
+.promise-box p {
+    color: #527ca5;
+    line-height: 2;
+    white-space: pre-line;
+    font-size: 16px;
+}
+
+.forever-text {
+    margin-top: 25px;
+}
+
+.final-message {
+    margin: 30px 0;
+}
+
+.final-message h2 {
+    color: #315C8C;
+    font-family: 'Dancing Script', cursive;
+    font-size: 27px;
+}
+
+.final-message p {
+    color: #527ca5;
+}
+
+@media (max-width: 600px) {
+
+    .final-card {
+        padding: 25px 15px;
+    }
+
+    .final-card h1 {
+        font-size: 32px;
+    }
+
+    .promise-box {
+        padding: 18px;
+    }
+
+    .promise-box p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
